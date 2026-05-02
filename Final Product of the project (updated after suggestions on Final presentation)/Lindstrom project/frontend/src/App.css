@@ -1,0 +1,284 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #1e3a8a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  padding: 16px;
+  min-height: 100vh;
+  background: #ffffff;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+.topbar p {
+  margin-top: 6px;
+  color: #3b82f6;
+  font-size: 16px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controls.vertical {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.controls select {
+  background: #ffffff;
+  color: #1e3a8a;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+  min-width: 150px;
+}
+
+.controls select:focus {
+  border-color: #2563eb;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.main-column,
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.06);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #1e3a8a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 56px);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.cell {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  transition: transform 0.15s ease;
+}
+
+.cell:hover {
+  transform: scale(1.02);
+}
+
+.walkable {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.blocked {
+  background: #93c5fd;
+  color: #1e3a8a;
+}
+
+.narrow {
+  background: #fde68a;
+  color: #92400e;
+}
+
+.path {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+}
+
+.start {
+  background: #bfdbfe !important;
+  color: #1e3a8a;
+}
+
+.target {
+  background: #60a5fa !important;
+  color: white;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: #1e3a8a;
+}
+
+.legend-box,
+.path-outline {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.path-outline {
+  border: 2px solid #2563eb;
+  background: transparent;
+}
+
+.metric-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 10px 12px;
+  border-radius: 10px;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.metric-item span {
+  color: #2563eb;
+}
+
+.metric-item strong {
+  color: #1e3a8a;
+}
+
+.multi-select-card {
+  margin-bottom: 16px;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.checkbox-item {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #1e3a8a;
+  font-size: 14px;
+}
+
+.checkbox-item input {
+  transform: scale(0.95);
+}
+
+.card p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.loading {
+  padding: 40px;
+  font-size: 22px;
+  color: #1e3a8a;
+  background: white;
+}
+
+@media (max-width: 1200px) {
+  .app {
+    max-width: 100%;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .controls.vertical {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 12px;
+  }
+
+  .topbar h1 {
+    font-size: 26px;
+  }
+
+  .topbar p {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(7, 42px);
+    gap: 6px;
+  }
+
+  .cell {
+    width: 42px;
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .controls select {
+    min-width: 130px;
+    font-size: 13px;
+  }
+}
